@@ -7,6 +7,18 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on("guildCreate", guild => {
+    // This triggers when our boyo joins a new party
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+});
+
+client.on("guildDelete", guild => {
+    // This event is what happens when boyo get kicked out of said party
+    console.log(`User has been removed from: ${guild.name} (id: ${guild.id})`);
+    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+});
+
 client.on('message', msg => {
     if (msg.content.startsWith('!nolife')) {
         let steamID = msg.content.split(' ', 2);
@@ -76,3 +88,4 @@ client.on('guildMemberAdd', member => {
 //client.on('')
 
 client.login(process.env['DISCORD_SECRET']);
+client.user.setActivity(`Serving ${client.guilds.size} servers`);

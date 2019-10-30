@@ -1,14 +1,14 @@
 {
   "name": "nolifebot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discord bot that tells you how much of your life you've wasted on Steam.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ian Otto (https://github.com/duper51)",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
