@@ -87,5 +87,4 @@ client.on('guildMemberAdd', member => {
 
 //client.on('')
 
-client.login(process.env['DISCORD_SECRET']);
-client.user.setActivity(`Serving ${client.guilds.size} servers`);
+client.login(process.env['DISCORD_SECRET']).then(r => client.user.setActivity(`Serving ${client.guilds.size} servers`));
